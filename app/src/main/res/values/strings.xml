@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WeatherForecast</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="checkAccount">Do not have an account? Register</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
 </resources>

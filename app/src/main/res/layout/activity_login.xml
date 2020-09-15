@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:ignore="UselessParent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Log In"
+        android:layout_marginTop="70dp"
+        android:textColor="#ffffff"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Welcome!"
+        android:layout_marginTop="15dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Login to Your RemLife Account"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/login_page_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="text|textPersonName"
+        android:singleLine="true"
+        android:typeface="normal"
+        android:gravity="center"
+        android:textColorHint="#fff"
+        android:textColor="#ffffff"
+        app:backgroundTint="#fff"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:id="@+id/login_page_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:gravity="center"
+        android:textColorHint="#fff"
+        android:textColor="#ffffff"
+        app:backgroundTint="#fff"
+        android:inputType="text|textPassword"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_activitylogin_loginbutton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="7dp"
+        app:cardBackgroundColor="#ffffff">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#0B98D5"
+            android:text="@string/login"/>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/textview_activitylogin_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/checkAccount"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:gravity="center"/>
+
+</LinearLayout>
