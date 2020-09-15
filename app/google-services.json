@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "139674576526",
+    "firebase_url": "https://weatherforecast-4e2ea.firebaseio.com",
+    "project_id": "weatherforecast-4e2ea",
+    "storage_bucket": "weatherforecast-4e2ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139674576526:android:ce00beab4ddf4b57ea4bdf",
+        "android_client_info": {
+          "package_name": "com.damlayagmur.weatherforecast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139674576526-752ae0saf0rbap7vhvo1iqa1ct8016ju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.damlayagmur.weatherforecast",
+            "certificate_hash": "18e76bc0c427f220c33fc5db669d9c1211c1ff7d"
+          }
+        },
+        {
+          "client_id": "139674576526-n5lsgf9vp1qp1imhisen9g8sbaqhm34p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQIJFHf2PSObkWHbTaMxjq1nYG68LBnyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139674576526-n5lsgf9vp1qp1imhisen9g8sbaqhm34p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

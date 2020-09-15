@@ -37,7 +37,7 @@
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/login_page_username"
+        android:id="@+id/login_page_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
