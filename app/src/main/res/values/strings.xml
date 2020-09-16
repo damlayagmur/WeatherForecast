@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="google_map_API_key">AIzaSyAXHLiH2ltl8vEOaJ8ABs7J6APaDWuZ2NM</string>
+
     <string name="app_name">WeatherForecast</string>
     <string name="email">E-mail</string>
     <string name="password">Password</string>
@@ -6,4 +9,6 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
+    <string name="searchLocation">Search Location</string>
 </resources>
+
