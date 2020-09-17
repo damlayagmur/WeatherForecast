@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
-        android:text="Login to Your RemLife Account"
+        android:text="Login to Your WeatherForecast Account"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 

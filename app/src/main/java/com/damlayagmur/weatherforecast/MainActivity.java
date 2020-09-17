@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,8 +71,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_main);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-       // mapFragment.getMapAsync(this);
-        logout=findViewById(R.id.logout);
+        mapFragment.getMapAsync(this);
+        logout=findViewById(R.id.logoutButton_activitymain);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +88,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         }else {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_user_location_code);
         }
+        init();
     }
 
     private void getCurrentLocation() {
@@ -108,6 +110,48 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
+        init();
+    }
+    public void geolocate(){
+        String searchString = editText_Search.getText().toString();
+        Geocoder geocoder = new Geocoder(this);
+        List<Address> addressList = new ArrayList <>();
+        try{
+            addressList = geocoder.getFromLocationName(searchString,1);
+        }catch (IOException e){
+            Log.e(TAG,"getLocate :IOException"+e.getMessage());
+        }
+        if(addressList.size() > 0){
+            Address address = addressList.get(0);
+            Double Lat = address.getLatitude();
+            Double Long = address.getLongitude();
+            LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
+
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(latLng);
+            markerOptions.title("Search Location");
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
+            mGoogleMap.addMarker(markerOptions);
+
+            Toast.makeText(this,searchString+"'s Latitude  "+Lat.toString()+"  "+searchString+"'s Longtitude  "+Long.toString(),Toast.LENGTH_SHORT).show();
+            mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+            mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(latLng,20)));
+        }
+    }
+    private void init(){
+        editText_Search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionID, KeyEvent keyEvent) {
+                if(actionID == EditorInfo.IME_ACTION_SEARCH || actionID == EditorInfo.IME_ACTION_DONE || keyEvent.getAction() == keyEvent.ACTION_DOWN || keyEvent.getAction() == keyEvent.KEYCODE_ENTER){
+
+                    geolocate();
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     public void logoutf(View view){
@@ -119,10 +163,13 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
+       // geolocate();
 
-        //LatLng man = new LatLng(19.169257,73.341601);
-        //mGoogleMap.addMarker(new MarkerOptions().position(man).title("Man"));
-        //mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(man));
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mGoogleMap.setMyLocationEnabled(true);
+            // mGoogleMap.setOnMarkerClickListener(this);
+        }
+        init();
     }
 
 
