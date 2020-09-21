@@ -7,28 +7,28 @@ import java.util.List;
 public class Model {
 
     @SerializedName("timezone")
-    public String timezone;
+    private String timezone;
 
     @SerializedName("lat")
-    public double  lat;
+    private double  lat;
 
     @SerializedName("lon")
-    public String lon;
+    private String lon;
 
     @SerializedName("timezone_offset")
-    public int timezone_offset;
+    private int timezone_offset;
 
     @SerializedName("current")
-    public CurrentModel currentModel;
+    public Current currentModel;
 
-    public CurrentModel getCurrentModel() {
+    public Current getCurrentModel() {
         return currentModel;
     }
 
     @SerializedName("daily")
-    public List<DailyModel> dailyModels;
+    public List<Daily> dailyModels;
 
-    public List <DailyModel> dailyModels() {
+    public List <Daily> dailyModels() {
         return dailyModels;
     }
 

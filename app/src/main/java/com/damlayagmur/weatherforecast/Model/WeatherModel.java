@@ -5,10 +5,10 @@ import com.google.gson.annotations.SerializedName;
 public class WeatherModel {
 
     @SerializedName("main")
-    public String main;
+    private String main;
 
     @SerializedName("description")
-    public String description;
+    private String description;
 
     public WeatherModel(String main, String description) {
         this.main = main;
