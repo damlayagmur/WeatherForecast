@@ -7,28 +7,18 @@ import java.util.List;
 
 public class Current {
 
-    @SerializedName("dt")
-    private int dt;
 
-    @SerializedName("sunrise")
-    private long sunrise;
+    @SerializedName("temp")
+    private double temp;
 
-    @SerializedName("sunset")
-    private int sunset;
 
     @SerializedName("weather")
     public List<WeatherModel> weatherModels;
 
-    public int getDt() {
-        return dt;
-    }
 
-    public long getSunrise() {
-        return sunrise;
-    }
 
-    public int getSunset() {
-        return sunset;
+    public double getTemp() {
+        return temp;
     }
 
     public List <WeatherModel> getWeatherModels() {

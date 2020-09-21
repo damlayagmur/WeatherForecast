@@ -1,17 +1,7 @@
 package com.damlayagmur.weatherforecast;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.damlayagmur.weatherforecast.Activity.MainActivity;
@@ -19,22 +9,8 @@ import com.damlayagmur.weatherforecast.Activity.WeatherForecastAdapter;
 import com.damlayagmur.weatherforecast.Model.Model;
 import com.damlayagmur.weatherforecast.Model.Recycler;
 import com.damlayagmur.weatherforecast.Service.DailyWeatherService;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
@@ -43,17 +19,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static androidx.constraintlayout.widget.Constraints.TAG;
-
 public class ViewModel  {
 
-    private GoogleMap mGoogleMap;
 
     MainActivity mainActivity;
-    private EditText editText_Search;
     Retrofit retrofit;
     WeatherForecastAdapter mAdapter;
-    RecyclerView recyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     private static Context mContext;
 
@@ -138,7 +109,7 @@ public class ViewModel  {
                 System.out.println("Lat:" + dailyWeather.getLat());
                 System.out.println("Lon:" + dailyWeather.getLon());
                 System.out.println("Timezone Offset:" + dailyWeather.getTimezone_offset());
-                System.out.println("Sunrise:" + dailyWeather.getCurrentModel().getSunrise());
+               // System.out.println("Sunrise:" + dailyWeather.getCurrentModel().getSunrise());
                 for (int i = 0; i < dailyWeather.currentModel.getWeatherModels().size(); i++) {
 
                     System.out.println("Description:" + dailyWeather.getCurrentModel().weatherModels.get(i).getDescription());
@@ -152,9 +123,10 @@ public class ViewModel  {
                 rc.setLayoutManager(mLayoutManager);
                 rc.setAdapter(mAdapter);
                 mAdapter.clear();
+                mAdapter.add(new Recycler("Current",dailyWeather.currentModel.weatherModels.get(0).getDescription(),dailyWeather.currentModel.getTemp()+" °K",dailyWeather.currentModel.getTemp() + " °K"));
                 for (int k = 0; k < dailyWeather.dailyModels.size(); k++) {
                     System.out.println("TempMin:" + dailyWeather.dailyModels().get(k).getTempModel().getMin());
-                    mAdapter.add(new Recycler(k, dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription(), dailyWeather.dailyModels().get(k).getTempModel().getMin() + "°K", dailyWeather.dailyModels().get(k).getTempModel().getMax() + "°K"));
+                    mAdapter.add(new Recycler("Day "+(k+1), dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription(), dailyWeather.dailyModels().get(k).getTempModel().getMax() + " °K", dailyWeather.dailyModels().get(k).getTempModel().getMin() + " °K"));
                     System.out.println("Weather Description:" + dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription());
                 }
 

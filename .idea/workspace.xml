@@ -11,35 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2545a186-00ca-4efe-acf9-2405f0a5e0a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/CurrentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/DailyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Daily.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/RecyclerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/TempModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Temperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/WeatherForecastAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Service/DailyWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Service/DailyWeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values - night/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values - night/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values - night/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -79,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2210">
-              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+            <state relative-caret-position="527">
+              <caret line="87" column="30" lean-forward="true" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
               <folding>
                 <element signature="e#3240#3390#0" expanded="true" />
                 <element signature="e#3389#3390#0" expanded="true" />
@@ -99,9 +75,12 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#435#436#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/RegisterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="-54">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
@@ -119,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-355">
-              <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+            <state relative-caret-position="-1521">
+              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2138#2139#0" expanded="true" />
@@ -133,13 +112,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/WeatherForecastAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="-266">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -192,7 +199,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/RecyclerAdapterListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/RecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/RecyclerModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors(night).xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
@@ -202,13 +208,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Service/DailyWeatherService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Model.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Daily.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/WeatherForecastAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java" />
       </list>
     </option>
   </component>
@@ -264,6 +272,17 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="weatherforecast" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WeatherForecast" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="WeatherForecast" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -392,7 +411,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5025381" side_tool="true" weight="0.18230277" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49844238" visible="true" weight="0.19402985" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49844238" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="2" sideWeight="0.5025381" side_tool="true" weight="0.18230277" />
       <window_info id="Resources Explorer" order="3" sideWeight="0.5025381" side_tool="true" weight="0.18230277" />
       <window_info id="Build Variants" order="4" sideWeight="0.5025381" side_tool="true" weight="0.18230277" />
@@ -409,7 +428,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50053304" side_tool="true" weight="0.6396677" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.5659398" />
       <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49946696" weight="0.26272067" />
-      <window_info anchor="bottom" id="Find" order="9" weight="0.07268951" />
+      <window_info anchor="bottom" id="Find" order="9" visible="true" weight="0.043613706" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" visible="true" weight="0.08315565" />
@@ -530,14 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/RecyclerAdapter.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/76f3c69879d3e01c082f49d8661c5590838148e1/retrofit-2.3.0-sources.jar!/retrofit2/ExecutorCallAdapterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -550,14 +561,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors(night).xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -569,14 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -612,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Daily.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -626,13 +614,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -653,37 +634,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Recycler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/WeatherModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/RegisterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="-54">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Model/Current.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/WeatherForecastAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="-266">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/ViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+        <state relative-caret-position="-1521">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2138#2139#0" expanded="true" />
@@ -696,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/damlayagmur/weatherforecast/Activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2210">
-          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+        <state relative-caret-position="527">
+          <caret line="87" column="30" lean-forward="true" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
           <folding>
             <element signature="e#3240#3390#0" expanded="true" />
             <element signature="e#3389#3390#0" expanded="true" />

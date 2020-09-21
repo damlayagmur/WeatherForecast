@@ -10,24 +10,16 @@ public class WeatherModel {
     @SerializedName("description")
     private String description;
 
-    public WeatherModel(String main, String description) {
+
+
+    public WeatherModel(String main, String description,double temp) {
         this.main = main;
         this.description = description;
+
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getMain() {
-        return main;
-    }
-
-    public void setMain(String main) {
-        this.main = main;
-    }
 }
