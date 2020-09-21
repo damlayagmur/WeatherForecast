@@ -1,21 +1,6 @@
 package com.damlayagmur.weatherforecast.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -27,12 +12,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.damlayagmur.weatherforecast.Model.Model;
-import com.damlayagmur.weatherforecast.Model.Recycler;
 import com.damlayagmur.weatherforecast.R;
 import com.damlayagmur.weatherforecast.Service.DailyWeatherService;
 import com.damlayagmur.weatherforecast.ViewModel;
@@ -49,28 +31,33 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class MainActivity extends FragmentActivity implements OnMapReadyCallback  {
-    CardView logout;
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
+    private CardView logout;
     private GoogleMap mGoogleMap;
     private FusedLocationProviderClient googleApiClient;
     private static final int request_user_location_code = 101;
-    private EditText editText_Search;
-    Retrofit retrofit;
-    RecyclerView recyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
-    WeatherForecastAdapter mAdapter;
-    ViewModel viewModel = new ViewModel();
+    private EditText editText_search;
+    private Retrofit retrofit;
+    private RecyclerView recyclerView;
+    private ViewModel viewModel = new ViewModel();
 
-    ListView listView;
     // private static final String BASE_URL = "onecall?lat=+" +"&lon=26.889199&exclude=hourly,minutely&appid=c018a5b51ea2d25a4b2cc18fff8872e3";
 
 
@@ -80,7 +67,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_main);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync( this);
+        mapFragment.getMapAsync(this);
         logout = findViewById(R.id.cardView_activityMain_logoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,14 +75,10 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 logoutf(view);
             }
         });
-        editText_Search = findViewById(R.id.editText_mapfragment);
+        editText_search = findViewById(R.id.editText_mapfragment);
         recyclerView = findViewById(R.id.recyclerView);
 
-
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        // weatherModels.add(new WeatherModel("dddddddd","wwwwww"));
-
 
         googleApiClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -104,7 +87,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, request_user_location_code);
         }
-        //Gson gson = new GsonBuilder().setLenient().create();
         retrofit = new Retrofit.Builder().baseUrl(DailyWeatherService.baseURL).addConverterFactory(GsonConverterFactory.create()).build();
         init();
         //getWeatherData();
@@ -175,8 +157,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void getCurrentLocation() {
         Task <Location> task = googleApiClient.getLastLocation();
-        final Context cv;
-        cv = this;
         task.addOnSuccessListener(new OnSuccessListener <Location>() {
             @Override
             public void onSuccess(final Location location) {
@@ -189,19 +169,17 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                             MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Current Location");
                             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                             googleMap.addMarker(markerOptions);
-
                         }
                     });
                 }
-                viewModel.getWeatherData(String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()),recyclerView);
+                viewModel.getWeatherData(String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()), recyclerView);
             }
         });
-
         init();
     }
 
     public void geolocate() {
-        String searchString = editText_Search.getText().toString();
+        String searchString = editText_search.getText().toString();
         Geocoder geocoder = new Geocoder(this);
         List <Address> addressList = new ArrayList <>();
         try {
@@ -219,24 +197,21 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             markerOptions.position(latLng);
             markerOptions.title("Search Location");
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-
             mGoogleMap.addMarker(markerOptions);
 
-            Toast.makeText(this, searchString + "'s Latitude  " + Lat.toString() + "  " + searchString + "'s Longtitude  " + Long.toString(), Toast.LENGTH_SHORT).show();
             String searchLat = Lat.toString();
             String searchLong = Long.toString();
             mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
             mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(latLng, 20)));
-            viewModel.getWeatherData(searchLat,searchLong,recyclerView);
+            viewModel.getWeatherData(searchLat, searchLong, recyclerView);
         }
     }
 
     private void init() {
-        editText_Search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        editText_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int actionID, KeyEvent keyEvent) {
                 if (actionID == EditorInfo.IME_ACTION_SEARCH || actionID == EditorInfo.IME_ACTION_DONE || keyEvent.getAction() == keyEvent.ACTION_DOWN || keyEvent.getAction() == keyEvent.KEYCODE_ENTER) {
-
                     geolocate();
                     return true;
                 }
@@ -254,11 +229,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
-        // geolocate();
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mGoogleMap.setMyLocationEnabled(true);
-            // mGoogleMap.setOnMarkerClickListener(this);
         }
         init();
     }
@@ -268,7 +240,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         switch (requestCode) {
             case request_user_location_code:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //getCurrentLocation();
+                    getCurrentLocation();
                 }
                 return;
         }
@@ -280,6 +252,5 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
-
 
 }

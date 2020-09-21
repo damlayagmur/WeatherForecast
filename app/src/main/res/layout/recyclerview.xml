@@ -17,7 +17,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_days"
+                android:id="@+id/textView_recyclerView_days"
                 android:layout_width="80dp"
                 android:layout_height="111dp"
                 android:layout_marginLeft="10dp"
@@ -30,7 +30,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_weatherDescription"
+                android:id="@+id/textView_recyclerView_weatherDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -38,13 +38,13 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.04"
-                app:layout_constraintStart_toEndOf="@+id/textView_classrecyclerview_days"
+                app:layout_constraintStart_toEndOf="@+id/textView_recyclerView_days"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_editor_absoluteX="95dp"
                 app:layout_editor_absoluteY="16dp" />
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_tempMin"
+                android:id="@+id/textView_recyclerView_tempMin"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -54,12 +54,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.81"
-                app:layout_constraintStart_toStartOf="@id/textView_classrecyclerview_weatherDescription"
-                app:layout_constraintTop_toBottomOf="@+id/textView_classrecyclerview_tempMinText"
+                app:layout_constraintStart_toStartOf="@id/textView_recyclerView_weatherDescription"
+                app:layout_constraintTop_toBottomOf="@+id/textView_recyclerView_tempMinText"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_tempMax"
+                android:id="@+id/textView_recyclerView_tempMax"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -71,12 +71,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.695"
-                app:layout_constraintStart_toStartOf="@id/textView_classrecyclerview_weatherDescription"
-                app:layout_constraintTop_toBottomOf="@+id/textView_classrecyclerview_tempMaxText"
+                app:layout_constraintStart_toStartOf="@id/textView_recyclerView_weatherDescription"
+                app:layout_constraintTop_toBottomOf="@+id/textView_recyclerView_tempMaxText"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_tempMaxText"
+                android:id="@+id/textView_recyclerView_tempMaxText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
@@ -89,7 +89,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView_classrecyclerview_tempMinText"
+                android:id="@+id/textView_recyclerView_tempMinText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
@@ -98,7 +98,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.545"
-                app:layout_constraintStart_toEndOf="@+id/textView_classrecyclerview_tempMaxText"
+                app:layout_constraintStart_toEndOf="@+id/textView_recyclerView_tempMaxText"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

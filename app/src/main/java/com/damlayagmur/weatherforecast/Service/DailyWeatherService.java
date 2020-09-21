@@ -9,7 +9,6 @@ import retrofit2.http.Url;
 public interface DailyWeatherService {
 
     String baseURL ="https://api.openweathermap.org/data/2.5/";
-    String key = "c018a5b51ea2d25a4b2cc18fff8872e3";
 
     @GET()
     Call <Model> getWeatherData(@Url String url);

@@ -1,16 +1,12 @@
 package com.damlayagmur.weatherforecast;
 
 import android.content.Context;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import com.damlayagmur.weatherforecast.Activity.MainActivity;
 import com.damlayagmur.weatherforecast.Activity.WeatherForecastAdapter;
 import com.damlayagmur.weatherforecast.Model.Model;
 import com.damlayagmur.weatherforecast.Model.Recycler;
 import com.damlayagmur.weatherforecast.Service.DailyWeatherService;
-import com.google.android.gms.maps.GoogleMap;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;

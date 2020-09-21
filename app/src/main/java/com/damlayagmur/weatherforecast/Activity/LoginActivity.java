@@ -3,7 +3,6 @@ package com.damlayagmur.weatherforecast.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.damlayagmur.weatherforecast.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,10 +21,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText enteredEmail;
-    EditText enteredPassword;
-    CardView loginButton;
-    FirebaseAuth firebaseAuth;
+    private EditText enteredEmail;
+    private EditText enteredPassword;
+    private CardView loginButton;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         registerPage.setText(registerSpannable);
         registerPage.setMovementMethod(LinkMovementMethod.getInstance());
 
-
         loginButton = findViewById(R.id.cardview_activitylogin_loginbutton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,8 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (password.length() < 6) {
                     enteredPassword.setError("Password must be at least 6 character");
                 } else {
-
-
                     firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener <AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task <AuthResult> task) {
@@ -84,6 +79,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

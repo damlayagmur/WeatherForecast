@@ -13,21 +13,11 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecastAdapter.ViewHolder> {
-
-    private String[] nodeDescription;
-    private Listener listener;
-    private ArrayList<Recycler> weatherModels = new ArrayList <>();
-
-
-    interface Listener {
-        void onClick(int position);
-    }
-
+public class WeatherForecastAdapter extends RecyclerView.Adapter <WeatherForecastAdapter.ViewHolder> {
+    private ArrayList <Recycler> weatherModels = new ArrayList <>();
 
     public void clear() {
         weatherModels = new ArrayList <>();
-       // weatherModels.clear();
         this.notifyDataSetChanged();
     }
 
@@ -50,12 +40,6 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
         holder.description.setText(currentItem.getDescription());
         holder.tempMin.setText(String.valueOf(currentItem.getTempMin()));
         holder.tempMax.setText(String.valueOf(currentItem.getTempMax()));
-        //TextView description = cardView.findViewById(R.id.nodetitle_nodeContextFragment_card);
-        //description.setText(nodeDescription[position]);
-    }
-
-    public void setListener(Listener listener){
-        this.listener = listener;
     }
 
     @Override
@@ -68,12 +52,13 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
         public TextView day;
         public TextView tempMax;
         public TextView tempMin;
+
         public ViewHolder(View v) {
             super(v);
-            description = v.findViewById(R.id.textView_classrecyclerview_weatherDescription);
-            day = v.findViewById(R.id.textView_classrecyclerview_days);
-            tempMax=v.findViewById(R.id.textView_classrecyclerview_tempMax);
-            tempMin=v.findViewById(R.id.textView_classrecyclerview_tempMin);
+            description = v.findViewById(R.id.textView_recyclerView_weatherDescription);
+            day = v.findViewById(R.id.textView_recyclerView_days);
+            tempMax = v.findViewById(R.id.textView_recyclerView_tempMax);
+            tempMin = v.findViewById(R.id.textView_recyclerView_tempMin);
         }
     }
 }

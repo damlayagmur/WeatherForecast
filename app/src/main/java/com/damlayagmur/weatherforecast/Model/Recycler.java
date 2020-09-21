@@ -8,7 +8,7 @@ public class Recycler {
     public String tempMin;
 
 
-    public Recycler(String day, String description, String tempMax, String  tempMin) {
+    public Recycler(String day, String description, String tempMax, String tempMin) {
         this.day = day;
         this.description = description;
         this.tempMax = tempMax;
