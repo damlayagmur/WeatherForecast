@@ -1,36 +1,42 @@
 package com.damlayagmur.weatherforecast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Switch;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.damlayagmur.weatherforecast.Model.CurrentModel;
+import com.damlayagmur.weatherforecast.Model.Model;
+import com.damlayagmur.weatherforecast.Model.RecyclerModel;
+import com.damlayagmur.weatherforecast.Model.WeatherModel;
+import com.damlayagmur.weatherforecast.Service.DailyWeatherService;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -46,23 +52,31 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 
 import java.io.IOException;
+import java.nio.file.WatchEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
-    Button logout;
+    CardView logout;
     private  GoogleMap mGoogleMap;
     private FusedLocationProviderClient googleApiClient;
-    private Location lastLocation;
-    private Marker currentUserLocationMarker;
-    private LocationRequest locationRequest;
     private static final int request_user_location_code = 101;
     private EditText editText_Search;
-    private MapView mapView;
+    Retrofit retrofit;
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView.Adapter mAdapter;
+    ArrayList<RecyclerModel> recyclerModels = new ArrayList <>();
+
+    ListView listView;
+    // private static final String BASE_URL = "onecall?lat=+" +"&lon=26.889199&exclude=hourly,minutely&appid=c018a5b51ea2d25a4b2cc18fff8872e3";
 
 
     @Override
@@ -72,7 +86,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        logout=findViewById(R.id.logoutButton_activitymain);
+        logout=findViewById(R.id.cardView_activityMain_logoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +94,13 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
         editText_Search = findViewById(R.id.editText_mapfragment);
+        recyclerView = findViewById(R.id.recyclerView);
+
+       // weatherModels.add(new WeatherModel("dddddddd","wwwwww"));
+
+
+
+
 
         googleApiClient= LocationServices.getFusedLocationProviderClient(this);
 
@@ -88,7 +109,71 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         }else {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_user_location_code);
         }
+        Gson gson = new GsonBuilder().setLenient().create();
+        retrofit = new Retrofit.Builder().baseUrl(DailyWeatherService.baseURL).addConverterFactory(GsonConverterFactory.create()).build();
         init();
+        //getWeatherData();
+
+    }
+    public void getWeatherData(String lat,String lon){
+        final DailyWeatherService api = retrofit.create(DailyWeatherService.class);
+        String BASE_URL = "onecall?lat="+lat+"&lon="+lon+"&exclude=hourly,minutely&appid=c018a5b51ea2d25a4b2cc18fff8872e3";
+        Call <Model> call  = api.getWeatherData(BASE_URL);
+        call.enqueue(new Callback <Model>() {
+            @Override
+            public void onResponse(Call <Model> call, Response <Model> response) {
+                Model dailyWeather = response.body();
+
+                System.out.println("Timezone:"+dailyWeather.getTimezone());
+                System.out.println("Lat:"+dailyWeather.getLat());
+                System.out.println("Lon:"+dailyWeather.getLon());
+                System.out.println("Timezone Offset:"+dailyWeather.getTimezone_offset());
+                System.out.println("Sunrise:"+dailyWeather.getCurrentModel().getSunrise());
+                for(int i=0;i<dailyWeather.currentModel.getWeatherModels().size();i++){
+
+                    System.out.println("Description:"+dailyWeather.getCurrentModel().weatherModels.get(i).getDescription());
+                }
+                for (int j=0;j<dailyWeather.dailyModels().size();j++) {
+                    System.out.println("Dt:"+dailyWeather.dailyModels().get(j).getDt());
+                }
+
+                for(int k=0 ;k<dailyWeather.dailyModels.size();k++){
+                    System.out.println("TempMin:"+dailyWeather.dailyModels().get(k).getTempModel().getMin());
+                    recyclerModels.add(new RecyclerModel(k,dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription(),dailyWeather.dailyModels().get(k).getTempModel().getMin()+"°K",dailyWeather.dailyModels().get(k).getTempModel().getMax()+"°K"));
+                    System.out.println("Weather Description:"+dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription());
+                }
+                recyclerView.setHasFixedSize(true);
+                mLayoutManager = new LinearLayoutManager(MainActivity.this);
+                mAdapter = new RecyclerViewAdapter(recyclerModels);
+                recyclerView.setLayoutManager(mLayoutManager);
+                recyclerView.setAdapter(mAdapter);
+
+
+
+
+
+              //  ArrayList<String>arrayList = new ArrayList <>();
+                //arrayList.add(dailyWeather.getTimezone());
+                //arrayList.add(((String) dailyWeather.getLon()));
+
+                //ArrayAdapter arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1,arrayList);
+                //listView.setAdapter(arrayAdapter);
+               // System.out.println(dailyWeather.getCurrentModel().getWeather().get(1));
+
+                    //for(WeatherModel data : weather){
+                        //System.out.println(api.getLat1());
+
+                    //}
+                    //System.out.println("xxxxxxxxx");
+                    //Log.d("lat",data.getLat());
+                //}
+            }
+            @Override
+            public void onFailure(Call <Model> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Ups!! Somethings went wrong", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     private void getCurrentLocation() {
@@ -105,11 +190,14 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                             MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Current Location");
                             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
                             googleMap.addMarker(markerOptions);
+
                         }
                     });
                 }
+                getWeatherData(String.valueOf(location.getLatitude()),String.valueOf(location.getLongitude()));
             }
         });
+
         init();
     }
     public void geolocate(){
@@ -135,8 +223,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             mGoogleMap.addMarker(markerOptions);
 
             Toast.makeText(this,searchString+"'s Latitude  "+Lat.toString()+"  "+searchString+"'s Longtitude  "+Long.toString(),Toast.LENGTH_SHORT).show();
+            String searchLat = Lat.toString();
+            //String searchLong = Long.toString();
             mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
             mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(latLng,20)));
+            //getWeatherData(searchLat);
         }
     }
     private void init(){
@@ -151,9 +242,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
-
     }
-
     public void logoutf(View view){
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));
@@ -172,7 +261,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         init();
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
@@ -182,5 +270,12 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 return;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        finish();
     }
 }
