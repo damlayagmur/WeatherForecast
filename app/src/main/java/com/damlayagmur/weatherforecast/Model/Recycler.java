@@ -2,10 +2,10 @@ package com.damlayagmur.weatherforecast.Model;
 
 public class Recycler {
 
-    public String day;
-    public String description;
-    public String tempMax;
-    public String tempMin;
+    private String day;
+    private String description;
+    private String tempMax;
+    private String tempMin;
 
 
     public Recycler(String day, String description, String tempMax, String tempMin) {

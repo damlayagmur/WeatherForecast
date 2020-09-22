@@ -12,8 +12,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.damlayagmur.weatherforecast.R;
 import com.damlayagmur.weatherforecast.Service.DailyWeatherService;
@@ -28,6 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,9 +59,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     private RecyclerView recyclerView;
     private ViewModel viewModel = new ViewModel();
 
-    // private static final String BASE_URL = "onecall?lat=+" +"&lon=26.889199&exclude=hourly,minutely&appid=c018a5b51ea2d25a4b2cc18fff8872e3";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,71 +87,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         }
         retrofit = new Retrofit.Builder().baseUrl(DailyWeatherService.baseURL).addConverterFactory(GsonConverterFactory.create()).build();
         init();
-        //getWeatherData();
-
-        /*recyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(MainActivity.this);
-        mAdapter = new WeatherForecastAdapter();
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(mAdapter);*/
-        //viewModel.geolocate(editText_Search,this);
-
     }
 
-    /*public void getWeatherData(String lat, String lon) {
-        final DailyWeatherService api = retrofit.create(DailyWeatherService.class);
-        String BASE_URL = String.format("onecall?lat=%s&lon=%s&exclude=hourly,minutely&appid=c018a5b51ea2d25a4b2cc18fff8872e3", lat, lon);
-        Call <Model> call = api.getWeatherData(BASE_URL);
-        call.enqueue(new Callback <Model>() {
-            @Override
-            public void onResponse(Call <Model> call, Response <Model> response) {
-                Model dailyWeather = response.body();
-
-                System.out.println("Timezone:" + dailyWeather.getTimezone());
-                System.out.println("Lat:" + dailyWeather.getLat());
-                System.out.println("Lon:" + dailyWeather.getLon());
-                System.out.println("Timezone Offset:" + dailyWeather.getTimezone_offset());
-                System.out.println("Sunrise:" + dailyWeather.getCurrentModel().getSunrise());
-                for (int i = 0; i < dailyWeather.currentModel.getWeatherModels().size(); i++) {
-
-                    System.out.println("Description:" + dailyWeather.getCurrentModel().weatherModels.get(i).getDescription());
-                }
-                for (int j = 0; j < dailyWeather.dailyModels().size(); j++) {
-                    System.out.println("Dt:" + dailyWeather.dailyModels().get(j).getDt());
-                }
-                mAdapter.clear();
-                for (int k = 0; k < dailyWeather.dailyModels.size(); k++) {
-                    System.out.println("TempMin:" + dailyWeather.dailyModels().get(k).getTempModel().getMin());
-                    mAdapter.add(new Recycler(k, dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription(), dailyWeather.dailyModels().get(k).getTempModel().getMin() + "°K", dailyWeather.dailyModels().get(k).getTempModel().getMax() + "°K"));
-                    System.out.println("Weather Description:" + dailyWeather.dailyModels().get(k).weatherModels.get(0).getDescription());
-                }
-
-
-
-                //  ArrayList<String>arrayList = new ArrayList <>();
-                //arrayList.add(dailyWeather.getTimezone());
-                //arrayList.add(((String) dailyWeather.getLon()));
-
-                //ArrayAdapter arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1,arrayList);
-                //listView.setAdapter(arrayAdapter);
-                // System.out.println(dailyWeather.getCurrentModel().getWeather().get(1));
-
-                //for(WeatherModel data : weather){
-                //System.out.println(api.getLat1());
-
-                //}
-                //System.out.println("xxxxxxxxx");
-                //Log.d("lat",data.getLat());
-                //}
-            }
-
-            @Override
-            public void onFailure(Call <Model> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Ups!! Somethings went wrong", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }*/
 
     private void getCurrentLocation() {
         Task <Location> task = googleApiClient.getLastLocation();
@@ -252,5 +187,4 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
-
 }
